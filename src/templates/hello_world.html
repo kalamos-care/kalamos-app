@@ -1,0 +1,19 @@
+<head>
+    {{ form.media }} <!-- needed for JS/GoogleMaps lookup -->
+</head>
+<body>
+    {{ form }}
+
+    {% if profile_content.exists %}
+    <table border=1>
+        <tr><th>username</th><th>first name</th><th>last name</th></tr>
+        {% for profile in profile_content %}
+        <tt>
+            <td>{{ profile.user.username }}</td>
+            <td>{{ profile.user.first_name }}</td>
+            <td>{{ profile.user.last_name }}</td>
+        </tr>
+        {% endfor %}
+    {% endif %}
+
+</body>
